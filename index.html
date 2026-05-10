@@ -24,19 +24,14 @@
         <!--Contadores de usuarios con div anidados-->
         <div class="row g-4 mb-4"> <!--Contenedor de filas con espacio entre ellas, crea "rejillas de contenido"-->
             <div class="col-md-6"> <!--Columna responsiva para el contador de usuarios activos-->
-                <div class="contador-box activo-box">
-                    <!--Contenedor para el contador de usuarios activos, aqui ayuda de IA-->
-                    <h3 id="cantidadActivos">0</h3>
-                    <!--Encabezado para mostrar la cantidad de usuarios activos, con id para actualizar dinamicamente-->
+                <div class="contador-box activo-box"> <!--Contenedor para el contador de usuarios activos, aqui ayuda de IA-->
+                    <h3 id="cantidadActivos">0</h3> <!--Encabezado para mostrar la cantidad de usuarios activos, con id para actualizar dinamicamente-->
                     <p>Usuarios Activos</p> <!--Parrafo para mostrar el texto "Usuarios Activos"-->
                 </div> <!--Cierre del div anidado-->
             </div>
-            <div class="col-md-6">
-                <!--Columna responsiva para el contador de usuarios inactivos, crea diseños flexibles-->
-                <div class="contador-box inactivo-box">
-                    <!--Contenedor para el contador de usuarios inactivos, con clase para estilo css-->
-                    <h3 id="cantidadInactivos">0</h3>
-                    <!--Encabezado para mostrar la cantidad de usuarios inactivos, con id para actualizar dinamicamente-->
+            <div class="col-md-6"> <!--Columna responsiva para el contador de usuarios inactivos, crea diseños flexibles-->
+                <div class="contador-box inactivo-box"> <!--Contenedor para el contador de usuarios inactivos, con clase para estilo css-->
+                    <h3 id="cantidadInactivos">0</h3> <!--Encabezado para mostrar la cantidad de usuarios inactivos, con id para actualizar dinamicamente-->
                     <p>Usuarios Inactivos</p> <!--Parrafo para mostrar el texto "Usuarios Inactivos"-->
                 </div> <!--Cierre del div anidado-->
             </div> <!--Etiqueta de cierre del contenedor de filas-->
@@ -44,66 +39,49 @@
         <div class="card p-4 mb-4"> <!--Contenedor para el formulario de registro de usuarios, con estilo de tarjeta-->
             <h3 class="mb-4">Registrar Usuario</h3> <!--Titulo para el formulario de registro de usuarios-->
             <div class="row g-3"> <!--Contenedor de filas con espacio entre ellas-->
-                <div class="col-md-4">
-                    <!--Columna responsiva para el campo de nombre, define el tamaño y comportamiento de la columna-->
+                <div class="col-md-4"> <!--Columna responsiva para el campo de nombre, define el tamaño y comportamiento de la columna-->
                     <label class="form-label">Nombre</label> <!--Etiqueta para el campo de nombre-->
-                    <input type="text" id="nombre" class="form-control" placeholder="Ingrese nombre" />
-                    <!--Campo de entrada para el nombre del usuario, con id para obtener su valor y clase para estilo de formulario-->
+                    <input type="text" id="nombre" class="form-control" placeholder="Ingrese nombre" /> <!--Campo de entrada para el nombre del usuario, con id para obtener su valor y clase para estilo de formulario-->
                 </div> <!--Cierre del div anidado-->
                 <div class="col-md-4"> <!--Columna responsiva para el campo de edad-->
                     <label class="form-label">Edad</label> <!--Etiqueta para el campo de edad-->
-                    <input type="number" id="edad" class="form-control" placeholder="Ingrese edad" />
-                    <!--Campo de entrada para la edad del usuario, con id para obtener su valor y clase para estilo de formulario-->
+                    <input type="number" id="edad" class="form-control" placeholder="Ingrese edad" /> <!--Campo de entrada para la edad del usuario, con id para obtener su valor y clase para estilo de formulario-->
                 </div>
                 <div class="col-md-4"> <!--Columna responsiva para el campo de rol-->
                     <label class="form-label">Rol</label> <!--Etiqueta para el campo de rol-->
-                    <select id="rol" class="form-select">
-                        <!--Campo de selección para el rol del usuario, con id para obtener su valor y clase para estilo de formulario-->
+                    <select id="rol" class="form-select"> <!--Campo de selección para el rol del usuario, con id para obtener su valor y clase para estilo de formulario-->
                         <option value="">Seleccione rol</option> <!--Opción por defecto-->
                         <option value="Administrador">Administrador</option> <!--Opción para el rol de Administrador-->
                         <option value="Usuario">Usuario</option> <!--Opción para el rol de Usuario-->
                     </select> <!--Cierre del campo de selección-->
                 </div> <!--Cierre del div anidado-->
             </div> <!--Cierre del contenedor de filas-->
-            <div class="mt-4 d-flex gap-2 flex-wrap">
-                <!--Contenedor para los botones de acción, con margen superior, diseño flexible y espacio entre ellos-->
-                <button class="btn btn-primary" onclick="agregarUsuario()">
+            <div class="mt-4 d-flex gap-2 flex-wrap"> <!--Contenedor para los botones de acción, con margen superior, diseño flexible y espacio entre ellos-->
+                <button class="btn btn-primary" onclick="agregarUsuario()"> <!--Botón para agregar un nuevo usuario, con clase para estilo de botón y evento onclick para llamar a la función agregarUsuario()-->
                     Agregar Usuario
-                </button>
-                <!--Botón para agregar un nuevo usuario, con clase para estilo de botón y evento onclick para llamar a la función agregarUsuario()-->
-                <button class="btn btn-secondary" onclick="ordenarPorEdad()">
+                </button> 
+                <button class="btn btn-secondary" onclick="ordenarPorEdad()"> <!--Botón para ordenar los usuarios por edad, con clase para estilo de botón y evento onclick para llamar a la función ordenarPorEdad()-->
                     Ordenar por Edad
-                </button>
-                <!--Botón para ordenar los usuarios por edad, con clase para estilo de botón y evento onclick para llamar a la función ordenarPorEdad()-->
+                </button> 
             </div> <!--Cierre del contenedor de botones-->
         </div>
-        <div class="card p-4">
-            <!--Contenedor para la tabla de usuarios, con estilo de tarjet, aqui ayuda parcial de IA-->
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
-                <!--Contenedor para el encabezado de la tabla y el filtro, con diseño flexible, espacio entre ellos y margen inferior, aqui ayuda de IA-->
+        <div class="card p-4"> <!--Contenedor para la tabla de usuarios, con estilo de tarjet, aqui ayuda parcial de IA-->
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4"> <!--Contenedor para el encabezado de la tabla y el filtro, con diseño flexible, espacio entre ellos y margen inferior, aqui ayuda de IA-->
                 <h3>Lista de Usuarios</h3> <!--Titulo para la tabla de usuarios-->
                 <div>
-                    <label class="me-2 fw-bold">Filtrar:</label>
-                    <!--Etiqueta para el filtro de usuarios, con margen derecho y estilo de fuente en negrita-->
-                    <select id="filtro" class="form-select" onchange="filtrarUsuarios()">
-                        <!--Campo de selección para filtrar usuarios, con id para obtener su valor y clase para estilo de formulario-->
+                    <label class="me-2 fw-bold">Filtrar:</label> <!--Etiqueta para el filtro de usuarios, con margen derecho y estilo de fuente en negrita-->
+                    <select id="filtro" class="form-select" onchange="filtrarUsuarios()"> <!--Campo de selección para filtrar usuarios, con id para obtener su valor y clase para estilo de formulario-->
                         <option value="Todos">Todos</option> <!--Opción para mostrar todos los usuarios-->
-                        <option value="Administrador">Solo Administradores</option>
-                        <!--Opción para mostrar solo los usuarios con rol de Administrador-->
-                        <option value="Usuario">Solo Usuarios</option>
-                        <!--Opción para mostrar solo los usuarios con rol de Usuario-->
-                    </select>
-                    <!--Cierre del campo de selección para el filtro de usuarios, con evento onchange para llamar a la función filtrarUsuarios()-->
+                        <option value="Administrador">Solo Administradores</option> <!--Opción para mostrar solo los usuarios con rol de Administrador-->
+                        <option value="Usuario">Solo Usuarios</option> <!--Opción para mostrar solo los usuarios con rol de Usuario-->
+                    </select> <!--Cierre del campo de selección para el filtro de usuarios, con evento onchange para llamar a la función filtrarUsuarios()-->
                 </div>
             </div>
-            <div class="table-responsive">
-                <!--Contenedor para hacer la tabla responsiva, permite que la tabla se adapte a diferentes tamaños de pantalla y agrega una barra de desplazamiento horizontal si es necesario-->
-                <table class="table table-striped table-hover align-middle">
-                    <!--Tabla con clases para estilo de tabla, filas rayadas, efecto hover y alineación vertical al medio-->
+            <div class="table-responsive"> <!--Contenedor para hacer la tabla responsiva, permite que la tabla se adapte a diferentes tamaños de pantalla y agrega una barra de desplazamiento horizontal si es necesario-->
+                <table class="table table-striped table-hover align-middle"> <!--Tabla con clases para estilo de tabla, filas rayadas, efecto hover y alineación vertical al medio-->
                     <thead class="table-dark"> <!--Encabezado de la tabla con clase para estilo de fondo oscuro-->
                         <tr>
-                            <th>#</th>
-                            <!--Encabezado para el número de fila, con etiqueta th para indicar que es un encabezado de tabla-->
+                            <th>#</th> <!--Encabezado para el número de fila, con etiqueta th para indicar que es un encabezado de tabla-->
                             <th>Nombre</th>
                             <th>Edad</th>
                             <th>Rol</th>
@@ -111,15 +89,13 @@
                             <th>Acciones</th>
                         </tr> <!--Cierre de la fila del encabezado de la tabla-->
                     </thead>
-                    <tbody id="tablaUsuarios">
-                        <!--Cuerpo de la tabla con id para insertar dinámicamente las filas de usuarios desde JavaScript-->
+                    <tbody id="tablaUsuarios"> <!--Cuerpo de la tabla con id para insertar dinámicamente las filas de usuarios desde JavaScript-->
                     </tbody> <!--Cierre del cuerpo de la tabla-->
                 </table> <!--Cierre de la tabla-->
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
-    <!--Enlace al archivo JavaScript para agregar funcionalidad a la página, se coloca al final del body para asegurar que el DOM esté completamente cargado antes de ejecutar el script-->
+    <script src="script.js"></script> <!--Enlace al archivo JavaScript para agregar funcionalidad a la página, se coloca al final del body para asegurar que el DOM esté completamente cargado antes de ejecutar el script-->
 </body> <!--Fin de la sección de cuerpo-->
 </html> <!--Fin del documento HTML-->
 

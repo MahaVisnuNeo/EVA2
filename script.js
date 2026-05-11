@@ -1,5 +1,3 @@
-const { act } = require("react");
-
 /* Array de usuarios con propiedades: nombre, edad, rol y activo */
 let usuarios = [
     {
@@ -51,8 +49,8 @@ function validarFormulario(nombre, edad, rol) {
 /* Funcion para agregar un nuevo usuario al array de usuarios */
 function agregarUsuario() {
     const nombre = document.getElementById("nombre").value.trim(); /*Obtiene el valor del campo de nombre, elimina los espacios en blanco al inicio y al final, y lo asigna a la variable nombre*/
-    const edad = parseInt(document.getElementById("edad").value()); /*Obtiene el valor del campo de edad, elimina los espacios en blanco al inicio y al final, lo convierte a un número entero y lo asigna a la variable edad*/
-    const rol = document.getElementById("rol").value;  /*Obtiene el valor del campo de rol, elimina los espacios en blanco al inicio y al final, y lo asigna a la variable rol*/
+    const edad = parseInt(document.getElementById("edad").value, 10); /*Obtiene el valor del campo de edad, lo convierte a un número entero y lo asigna a la variable edad*/
+    const rol = document.getElementById("rol").value;  /*Obtiene el valor del campo de rol y lo asigna a la variable rol*/
 
     const formularioValido = validarFormulario(nombre, edad, rol); /*Llama a la función validarFormulario() con los valores de nombre, edad y rol, y asigna el resultado a la variable formularioValido*/
     if (!formularioValido) { /*if para verificar si la validación del formulario ha fallado, si formularioValido es false se muestra una alerta y se retorna para evitar que se agregue un usuario con datos no válidos*/
@@ -93,25 +91,26 @@ function mostrarUsuarios(listaUsuarios) {
         <td>${usuario.nombre}</td>
         <td>${usuario.edad}</td>
         <td>${usuario.rol}</td>
-        <td class="${estadoClase}">${estadoTexto}</td>
         <td>
             <span class="badge ${estadoClase} badge-estado">
                 ${estadoTexto}
             </span>
         </td>
         <td class="d-flex gap-2 flex-wrap">
-                    <button
-            class="btn btn-warning btn-sm"
-            onclick="cambiarEstado(${index})"
-        >
-            Cambiar Estado
-        </button>
-        <button
-            class="btn btn-danger btn-sm"
-            onclick="eliminarUsuario(${index})"
-        >
-            Eliminar
-        </button>
+            <button
+                type="button"
+                class="btn btn-warning btn-sm"
+                onclick="cambiarEstado(${index})"
+            >
+                Cambiar Estado
+            </button>
+            <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                onclick="eliminarUsuario(${index})"
+            >
+                Eliminar
+            </button>
         </td>
     `;
         tabla.appendChild(fila); /*Agrega la fila creada al cuerpo de la tabla, utilizando appendChild para insertar la fila en el DOM*/
@@ -140,9 +139,11 @@ function filtrarUsuarios() { /*Funcion para filtrar los usuarios según el rol s
     let usuariosFiltrados = []; /*Crea un array vacío para almacenar los usuarios filtrados, y lo asigna a la variable usuariosFiltrados*/
     switch (filtro) { /*Switch para determinar el filtro seleccionado, dependiendo del valor de filtro se asigna el array de usuarios filtrados correspondiente a la variable usuariosFiltrados*/
         case "Administrador": /*Caso para el filtro de Administrador, si filtro es "Administrador" se asigna un array filtrado que incluye solo los usuarios con rol "Administrador"*/
-            usuariosFiltrados = usuarios.filter(usuario => usuario.rol === "Usuario"); /*Filtra el array de usuarios utilizando el método filter(), para incluir solo los usuarios cuyo rol sea "Usuario"*/
+            usuariosFiltrados = usuarios.filter(usuario => usuario.rol === "Administrador");
             break; /*Break para salir del switch después de asignar el array de usuarios filtrados para el caso de Administrador*/
-
+        case "Usuario": /*Caso para el filtro de Usuario, si filtro es "Usuario" se asigna un array filtrado que incluye solo los usuarios con rol "Usuario"*/
+            usuariosFiltrados = usuarios.filter(usuario => usuario.rol === "Usuario");
+            break;
         default: /*Caso por defecto para el filtro de Todos, si filtro no coincide con ningún caso anterior se asigna el array completo de usuarios a la variable usuariosFiltrados*/
             usuariosFiltrados = usuarios; /*Asigna el array completo de usuarios a la variable usuariosFiltrados, para mostrar todos los usuarios sin filtrar*/
     }

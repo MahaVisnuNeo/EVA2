@@ -55,6 +55,11 @@ body {
     /* Peso de fuente para los contadores */
 }
 
+.activo-box {
+    background: linear-gradient(135deg, #198754, #0f5132);
+    /* Gradiente verde para usuarios activos */
+}
+
 /* Colores personalizados para los contadores de usuarios activos e inactivos, utilizando gradientes para un efecto visual atractivo */
 .inactivo-box {
     background: linear-gradient(135deg, #dc3545, #b02a37);

@@ -1,0 +1,67 @@
+/* Estilos personalizados para el panel de gestión de usuarios */
+
+/* Body con fondo suave y altura completa */
+
+body {
+    background-color: #f4f6f9;
+    /* Color de fondo suave */
+    min-height: 100vh;
+    /* Altura mínima para ocupar toda la pantalla */
+}
+
+/* Cards con bordes redondeados y sombra para un aspecto moderno */
+.card {
+    border: none;
+    /* Elimina el borde predeterminado de las cards */
+    border-radius: 18px;
+    /* Bordes redondeados para un diseño mas suave y moderno */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    /* Sombra suave para dar profundidad */
+}
+
+/* Tablas con bordes suaves y espaciado para mejorar la legibilidad */
+.table {
+    vertical-align: middle;
+    /* Alineación vertical al medio para las celdas de la tabla */
+}
+
+/* Badges con tamaño y padding personalizados para destacar el estado de los usuarios  */
+.badge-estado {
+    font-size: 0.9rem;
+    /* Tamaño de fuente ligeramente más pequeño para los badges */
+    padding: 8px 12px;
+    /* Padding personalizado para un mejor ajuste del texto */
+}
+
+/* Títulos con peso y espaciado para resaltar la jerarquía visual */
+.titulo {
+    font-weight: 800;
+    /* Peso de fuente para los títulos */
+    letter-spacing: 1px;
+    /* Espaciado entre letras para mejorar la legibilidad */
+}
+
+/* Contadores con diseño de caja, colores y tipografía para destacar las métricas clave */
+.contador-box {
+    border-radius: 16px;
+    /* Bordes redondeados para un diseño más suave */
+    padding: 18px;
+    /* Espaciado interno para los contadores */
+    color: white;
+    /* Color de texto blanco para contraste con el fondo */
+    text-align: center;
+    /* Centra el texto dentro de los contadores */
+    font-weight: bold;
+    /* Peso de fuente para los contadores */
+}
+
+.activo-box {
+    background: linear-gradient(135deg, #198754, #0f5132);
+    /* Gradiente verde para usuarios activos */
+}
+
+/* Colores personalizados para los contadores de usuarios activos e inactivos, utilizando gradientes para un efecto visual atractivo */
+.inactivo-box {
+    background: linear-gradient(135deg, #dc3545, #b02a37);
+    /* Gradiente rojo para usuarios inactivos */
+}
